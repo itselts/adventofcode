@@ -35,7 +35,7 @@ for i in move_input:
     m, f, t = int(i.split(' ')[1]), int(i.split(' ')[3]), int(i.split(' ')[5])
 
     delta = stack[f][:m]
-    delta = delta[::-1]
+    delta = delta[::-1] # COMMENT OUT FOR PART 2
 
     stack[f], stack[t] = stack[f][m:], delta + stack[t]
 
@@ -43,3 +43,5 @@ top = []
 for i in range(1,10):
     top.append(stack[i][0])
 print(''.join(top))
+
+
