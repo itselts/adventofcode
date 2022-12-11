@@ -8,6 +8,7 @@ for i, row in enumerate(data):
 
 grid = np.array(data, int)
 
+# part 1
 seen = set()
 
 def look_left(index, grid):
@@ -49,3 +50,4 @@ for index in np.ndindex(grid.shape):
         seen.add(index)
 
 print(len(seen))
+
