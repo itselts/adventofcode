@@ -54,6 +54,6 @@ def right(h_coord, t_coord):
     elif h_x < t_x: # tail right
         return ((h_x+1, h_y), t_coord)
 
-for move in data:
+'''for move in data:
     if move[0] == 'U':
-        
+        # recursion'''
