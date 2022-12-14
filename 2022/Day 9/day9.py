@@ -126,17 +126,15 @@ current = ((1,1), (1,1))
 for move in data:
     if move[0] == 'U':
         current = up(current[0], current[1], int(move[1]))
-        
-        visited.union(current[2])
+        visited = visited.union(current[2])
     elif move[0] == 'D':
         current = down(current[0], current[1], int(move[1]))
-        visited.union(current[2])
+        visited = visited.union(current[2])
     elif move[0] == 'L':
         current = left(current[0], current[1], int(move[1]))
-        visited.union(current[2])
+        visited = visited.union(current[2])
     else:
         current = right(current[0], current[1], int(move[1]))
-        traversed = current[2]
-        visited.union(traversed)
+        visited = visited.union(current[2])
 
 print(len(visited))
