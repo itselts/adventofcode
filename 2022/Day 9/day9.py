@@ -1,4 +1,4 @@
-with open('./test.csv') as file:
+with open('./input.csv') as file:
     data = [x.strip().split(' ') for x in file]
 
 def up(h_coord, t_coord, n, visited=set()):
