@@ -8,13 +8,13 @@ def up(h_coord, t_coord, n, visited=set()):
 
     if n == 1:
         if h_y == t_y: # tail same y 
-            return ((h_x, h_y+1), t_coord, visited.add(t_coord))
+            return ((h_x, h_y+1), t_coord, visited)
         elif t_y < h_y and abs(t_x - h_x) == 1: # tail lower y
-            return ((h_x, h_y+1), (h_x, t_y+1), visited.add((h_x, t_y+1)))
+            return ((h_x, h_y+1), (h_x, t_y+1), visited)
         elif t_y < h_y and t_x == h_x: # tail lower y
-            return ((h_x, h_y+1), (t_x, t_y+1), visited.add((t_x, t_y+1)))
+            return ((h_x, h_y+1), (t_x, t_y+1), visited)
         elif t_y > h_y: # tail higher
-            return ((h_x, h_y+1), t_coord, visited.add(t_coord))
+            return ((h_x, h_y+1), t_coord, visited)
     else:
         if h_y == t_y: # tail same y 
             return up((h_x, h_y+1), t_coord, n-1, visited)
