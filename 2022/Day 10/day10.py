@@ -10,13 +10,13 @@ X = 1
 for line in data:
     if line[0] == 'noop':
         cycle += 1
-        if cycle in [20, 60, 100, 140, 180, 220]:
+        if (cycle-20) % 40 == 0:
             total += cycle * X
         continue
     else:
         for _ in range(2):
             cycle += 1
-            if cycle in [20, 60, 100, 140, 180, 220]:
+            if (cycle-20) % 40 == 0:
                 total += cycle * X
         X += int(line[1])
 
