@@ -31,7 +31,8 @@ tests = []
 for monkey in monkeys:
     tests.append(monkeys[monkey]["Test"])
 
-modulo = functools.reduce(lambda x,y: x*y, tests)
+modulo = functools.reduce(lambda x,y: x*y, tests) # (a mod kn) mod n = a mod n
+# Addition and multiplication preserve congruence
 
 part1 = False
 
