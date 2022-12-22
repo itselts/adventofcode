@@ -57,7 +57,7 @@ while Q:
     
     tmp = {index: value for index, value in dist.items() if index in Q}
     u = min(tmp, key=tmp.get)
-    # u = min(dist.keys() & Q, key=dist.get)
+    # u = min(dist.keys() & Q, key=dist.get) # for each item x in iterable, apply dist.get(x) and get the x which produces the smallest dist.get(x)
     
     if u == E:
         break
