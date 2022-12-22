@@ -54,8 +54,11 @@ for index in np.ndindex(map.shape):
 dist[S] = 0
 
 while Q:
-    u = min(dist.keys() & Q, key=dist.get)
-
+    
+    tmp = {index: value for index, value in dist.items() if index in Q}
+    u = min(tmp, key=tmp.get)
+    # u = min(dist.keys() & Q, key=dist.get)
+    
     if u == E:
         break
     
