@@ -6,6 +6,11 @@ map = np.array(map)
 
 adj = {}
 
+S = tuple([x[0] for x in np.where(map == "S")])
+E = tuple([x[0] for x in np.where(map == "E")])
+
+map[S] = "a"
+map[E] = "z"
 
 def neighbour(index, map):
     row = index[0]
@@ -13,45 +18,30 @@ def neighbour(index, map):
 
     valid = set()
 
-    if map[index] == "S":
-        if (col != map.shape[1]-1) and (ord(map[row, col+1]) - ord("a") <= 1): # look right
-            valid.add((row, col+1))
-        
-        if  (col != 0) and (ord(map[row, col-1]) - ord("a") <= 1): # look left
-            valid.add((row, col-1))
+    if (col != map.shape[1]-1) and (ord(map[row, col+1]) - ord(map[index]) <= 1): # look right
+        valid.add((row, col+1))
+    
+    if  (col != 0) and (ord(map[row, col-1]) - ord(map[index]) <= 1): # look left
+        valid.add((row, col-1))
 
-        if (row != map.shape[0] - 1) and (ord(map[row+1, col]) - ord("a") <= 1): # look up (But traverse down)
-            valid.add((row+1, col))
-        
-        if (row != 0) and (ord(map[row-1, col]) - ord("a") <= 1): # look down (But traverse up)
-            valid.add((row-1, col))
-
-    else:
-        if (col != map.shape[1]-1) and (ord(map[row, col+1]) - ord(map[index]) <= 1): # look right
-            valid.add((row, col+1))
-        
-        if  (col != 0) and (ord(map[row, col-1]) - ord(map[index]) <= 1): # look left
-            valid.add((row, col-1))
-
-        if (row != map.shape[0] - 1) and (ord(map[row+1, col]) - ord(map[index]) <= 1): # look up (But traverse down)
-            valid.add((row+1, col))
-        
-        if (row != 0) and (ord(map[row-1, col]) - ord(map[index]) <= 1): # look down (But traverse up)
-            valid.add((row-1, col))
+    if (row != map.shape[0] - 1) and (ord(map[row+1, col]) - ord(map[index]) <= 1): # look up (But traverse down)
+        valid.add((row+1, col))
+    
+    if (row != 0) and (ord(map[row-1, col]) - ord(map[index]) <= 1): # look down (But traverse up)
+        valid.add((row-1, col))
 
     return valid 
 
 
 dist = {}
 Q = set()
-S = (20,0)
-E = (20,40)
 
 for index in np.ndindex(map.shape):
     Q.add(index)
     dist[index] = math.inf 
 
 dist[S] = 0
+
 
 while Q:
     
@@ -60,7 +50,7 @@ while Q:
     # u = min(dist.keys() & Q, key=dist.get) # for each item x in iterable, apply dist.get(x) and get the x which produces the smallest dist.get(x)
     
     if u == E:
-        break
+        break      
     
     Q.remove(u)
     for v in (neighbour(u, map) & Q):
@@ -68,3 +58,4 @@ while Q:
             dist[v] = dist[u] + 1
 
 print(dist[E])
+
