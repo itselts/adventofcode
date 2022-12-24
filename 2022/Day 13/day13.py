@@ -48,7 +48,7 @@ for a,b in pairs:
 packets.append([[2]])
 packets.append([[6]])
 
-for i in range(len(packets)):
+for _ in range(len(packets)):
     for j in range(len(packets)-1):
         # print(compare(packets[j], packets[j-1]))
         if compare(packets[j], packets[j+1]) != 1:
