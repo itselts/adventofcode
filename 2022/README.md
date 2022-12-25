@@ -101,3 +101,14 @@
 
 ### Part 2
 - Bubble sort
+
+## Day 14 - Regolith Reservoir
+### Part 1
+- Sand falling
+- String parsing (Can perhaps use list comprehension within list comprehension instead)
+- Grid filling based on straight line coordinates
+- Define my own fall function. Can redefine the void falling condition as falling below the minimum y coordinate rock
+
+### Part 2 
+- No longer infinite void, has a base
+- Finding max value of y coordinate in (x, y) dictionary keys
