@@ -107,7 +107,9 @@
 - Sand falling
 - String parsing (Can perhaps use list comprehension within list comprehension instead)
 - Grid filling based on straight line coordinates
-- Define my own fall function. Can redefine the void falling condition as falling below the minimum y coordinate rock
+- Define my own fall function. 
+    - Can redefine the void falling condition as falling below the minimum y coordinate rock
+    - Can do a neat trick by defining dx, dy as all the possible fall directions checked in the correct order [(0,1), (-1,1), (1,1)]. If it is air for any of them, break/continue. 
 
 ### Part 2 
 - No longer infinite void, has a base
