@@ -53,13 +53,9 @@ if part2 == False:
 
     print(i)
 else:
-    y_max = 0
-    for coord in grid.keys():
-        if coord[1] > y_max:
-            y_max = coord[1]
-
+    y_max = max(y for x,y in grid.keys())
     y_max += 2
-
+    
     for x in range(0, 1000):
         grid[(x, y_max)] = 1
 
