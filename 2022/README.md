@@ -154,4 +154,9 @@ To do
 - Finding the stack height after 1 million million rocks
 - Cannot iterate, so must find repeating state given the move/block set is cyclic.
 - State is defined by (top_stack, rock_index, move_index) with a top_stack depth of 50.
-- Finicky to deal with the two edge cases (Starting height for the cycle, and the remanining height added to get to the 1,000,000,000,000th block)
+- Finicky to get all the relevant quantities 
+    - Index for when the cycle begins (The first state to be seen twice)
+    - Cycle length
+    - Height added after each cycle
+    - Starting height for when cycle begins
+    - Remanining height added to get to the 1,000,000,000,000th block 
