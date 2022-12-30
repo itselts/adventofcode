@@ -82,7 +82,7 @@
 
 ## Day 11 - Monkey in the Middle
 ### Part 1
-- String parsing for monkeys
+- String parsing for monkeys throwing items around
 
 ### Part 2
 - Modulo lowest common multiple hack to limit worry levels tracking
@@ -91,6 +91,9 @@
 ## Day 12 - Hill Climbing Algorithm
 ### Part 1
 - Dijkstra's on elevation grid
+
+### Part 2
+To do
 
 ## Day 13 - Distress Signal
 ### Part 1
@@ -104,7 +107,7 @@
 
 ## Day 14 - Regolith Reservoir
 ### Part 1
-- Sand falling
+- Sand falling physics. Find when the mound doesn't change anymore.
 - String parsing (Can perhaps use list comprehension within list comprehension instead)
 - Grid filling based on straight line coordinates
 - Define my own fall function. 
@@ -112,5 +115,31 @@
     - Can do a neat trick by defining dx, dy as all the possible fall directions checked in the correct order [(0,1), (-1,1), (1,1)]. If it is air for any of them, break/continue. 
 
 ### Part 2 
-- No longer infinite void, has a base
+- No longer infinite void, has a base. Find when the mound covers the source.
 - Finding max value of y coordinate in (x, y) dictionary keys
+
+## Day 15 - Beacon Exclusion Zone
+### Part 1
+- Sensor beacon pairs that map the radius using Manhattan distance.
+- Find where a beacon cannot be in a given row.
+- Manhattan distances have some nice properties which can be used to solve the problem.
+
+### Part 2
+- Find the unique position in an area where the beacon has to be.
+- Massive search space that cannot be brute forced.
+- Problem solve to reduce the search space.
+    - Can also use Z3 solver as another method
+
+
+## Day 16 - Proboscidea Volcanium
+### Part 1
+- BFS of a cave system traversal.
+- 4 dimensional state vector.
+- Dynamic node values for each step.
+- 45+ nodes at depth 30.
+- Floyd-Warshal algorithm (Shortest distance from any node to any node) to create smaller subgraph of 15~ nodes
+
+### Part 2
+- Introduction of an elephant that can also make decisions. (Blows up complexity)
+- 6 dimensional state vector
+- Depth 26
