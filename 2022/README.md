@@ -143,3 +143,15 @@ To do
 - Introduction of an elephant that can also make decisions. (Blows up complexity)
 - 6 dimensional state vector
 - Depth 26
+
+
+## Day 17 - Pyroclastic Flow
+### Part 1
+- Tetris with a cyclic rock/move set and start positions based on the stack height. (No rotations)
+- Finding the stack height after 2022 rocks
+
+### Part 2
+- Finding the stack height after 1 million million rocks
+- Cannot iterate, so must find repeating state given the move/block set is cyclic.
+- State is defined by (top_stack, rock_index, move_index) with a top_stack depth of 50.
+- Finicky to deal with the two edge cases (Starting height for the cycle, and the remanining height added to get to the 1,000,000,000,000th block)
