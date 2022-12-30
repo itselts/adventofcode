@@ -142,7 +142,9 @@ To do
 ### Part 2
 - Introduction of an elephant that can also make decisions. (Blows up complexity)
 - 6 dimensional state vector
-- Depth 26
+- Heuristic used as original solution took too long (2.5 hours) and was wrong (Possible edge case when my time has run out, but not the elphants)
+    - Heuristic - Rerun part 1 twice, where the opened valves of the first run is removed from the second run.
+    - This greedy approach may not always work (Worked for my input data so...)
 
 
 ## Day 17 - Pyroclastic Flow
