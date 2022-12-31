@@ -172,3 +172,15 @@ To do
 ### Part 2
 - Flood fill to get only the exterior surface area.
 - Bug fix: Ensure the stack only contains unique elements to prevent double counting!
+
+
+## Day 19 - Not Enough Minerals
+### Part 1
+- Stack-based BFS of mining geode blueprints at depth 24.
+- Optimisation required with branch pruning
+    - No need to build more robots than the maximum possible expenditure of that ore for a turn
+    - Cut a branch short if it can never reach the current geode maximum
+- When implementing search algorithms, always include a SEEN set. Only add a state to the stack iff it is both not in the stack and not in SEEN. This HEAVILY speeds up the algorithm due to massive possibilities of double-counting states.
+
+### Part 2
+- Depth of 32. Only 3 blueprints rather than 30. No changes required
