@@ -1,6 +1,6 @@
 import collections
 
-cubes = {tuple(map(int, (x.split(",")))) for x in open("./test.csv").read().splitlines()} # All cubes within 25x25x25
+cubes = {tuple(map(int, (x.split(",")))) for x in open("./input.csv").read().splitlines()} # All cubes within 25x25x25
 
 surround = lambda x,y,z: {(x+1,y,z),(x-1,y,z),(x,y+1,z),(x,y-1,z),(x,y,z+1),(x,y,z-1)}
 
@@ -14,32 +14,20 @@ for cube in cubes:
 print(surface)
     
 # Part 2
-stack = [(0,0,0)]
+stack =[(-1,-1,-1)]
 seen = set()
 surface = 0
+exterior = set()
 while stack:
     cur = stack.pop()
     for neighbour in surround(*cur):
         x,y,z = neighbour
-        if (neighbour not in seen) and (0<=x<=5) and (0<=y<=5) and (0<=z<=5):
-            if neighbour not in cubes:    
+        if (neighbour not in seen) and (neighbour not in stack) and (-1<=x<=25) and (-1<=y<=25) and (-1<=z<=25):
+            if (neighbour not in cubes): 
                 stack.append(neighbour)
-            elif neighbour in cubes:
+            else:
                 surface += 1
+                exterior.add(neighbour)
     seen.add(cur)
 
 print(surface)
-
-
-'''seen = set()
-todo = [(-1,-1,-1)]
-
-stack = [(0,0,0)]
-seen = set()
-surface = 0
-while stack:
-    here = stack.pop()
-    stack += [s for s in (surround(*here) - cubes - seen) if all(-1<=c<=25 for c in s)]
-    seen |= {here}
-
-print(sum((s in seen) for c in cubes for s in surround(*c)))'''
