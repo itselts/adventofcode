@@ -170,4 +170,5 @@ To do
 - 1 liner for a nested for-loop
 
 ### Part 2
-- Flood and fill to get only the exterior surface area.
+- Flood fill to get only the exterior surface area.
+- Bug fix: Ensure the stack only contains unique elements to prevent double counting!
