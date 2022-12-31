@@ -181,7 +181,7 @@ To do
     - No need to build more robots than the maximum possible expenditure of that ore for a turn
     - Cut a branch short if it can never reach the current geode maximum
 - Other optimisation methods
-    - Can reduce the search space dimensionality by adding the cumulative geodes mined by a geo_bot for the time remaning and removing the need to track the number of geo_bots.
+    - Can reduce the search space dimensionality by adding the cumulative geodes mined by a geo_bot for the time remaning and removing the need to track the number of geo_bots. (This can collapse different states in higher dimension to the same one in lower dimension)
     - “if you choose not to build a machine but could have then don’t build that machine until you’ve built something else”.
 - When implementing search algorithms, always include a SEEN set. Only add a state to the stack iff it is both not in the stack and not in SEEN. This HEAVILY speeds up the algorithm due to massive possibilities of double-counting states.
 
