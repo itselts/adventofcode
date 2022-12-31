@@ -133,7 +133,7 @@ To do
 
 ## Day 16 - Proboscidea Volcanium
 ### Part 1
-- BFS of a cave system traversal.
+- Stack-based BFS of a cave system traversal. (Try recursion-based BFS in future?)
 - 4 dimensional state vector.
 - Dynamic node values for each step.
 - 45+ nodes at depth 30.
@@ -162,3 +162,12 @@ To do
     - Height added after each cycle
     - Starting height for when cycle begins
     - Remanining height added to get to the 1,000,000,000,000th block 
+
+## Day 18 - Boiling Boulders
+### Part 1 
+- Get neighbours of each lava droplet to see if it is exposed to air.
+    - Lambda function for 3D neighbours with unpacking operator (6 directions)
+- 1 liner for a nested for-loop
+
+### Part 2
+- Flood and fill to get only the exterior surface area.
