@@ -194,7 +194,7 @@ To do
 - Shuffling of a circular list
     - "the list is circular, so moving a number off one end of the list wraps back around to the other end as if the ends were connected."
 - Shuffle/Perform operations on the index list, which is the index map to the original list, in the original list order.
-    - variable move is the new index.
+    - Should rename variable move to new_index for clarity
 - Modulo operator to model circular list. Two edge cases:
     - Requires an if statement that if it moves to position 0, it moves to the end of the list
     - modulo len(list)-1 given Python indexing. (End of list index moves it to the start of the list)
