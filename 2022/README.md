@@ -187,3 +187,18 @@ To do
 
 ### Part 2
 - Depth of 32. Only 3 blueprints rather than 30. No changes required
+
+
+## Day 20 - Grove Positioning System
+### Part 1
+- Shuffling of a circular list
+    - "the list is circular, so moving a number off one end of the list wraps back around to the other end as if the ends were connected."
+- Shuffle/Perform operations on the index list, which is the index map to the original list.
+    - variable move is the new index.
+- Modulo operator to model circular list. Two edge cases:
+    - Requires an if statement that if it moves to position 0, it moves to the end of the list
+    - modulo len(list)-1 given Python indexing. (End of list index moves it to the start of the list)
+
+### Part 2
+- Number of moves is multiplied (Doesn't change code given modulus operator)
+- 10 rounds of shuffling

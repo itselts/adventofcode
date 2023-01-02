@@ -8,7 +8,7 @@ indicies = list(range(len(encrypted)))
 # REMEMBER, the list is circular, so moving a number off one end of the list wraps back around to the other end as if the ends were connected.
 for i, x in enumerate(encrypted):
     indicies.pop(cur := indicies.index(i))
-    move = (cur+x) % (len(encrypted)-1) # Position (len(encrypted)-1) (AKA end of the list) is the start of the list
+    move = (cur+x) % (len(encrypted)-1) # Position (len(encrypted)-1) (AKA end of the list) is the start of the list. move = new index position.
     if move == 0: # Position 0 is the end of the list.
         indicies.insert(len(encrypted)-1, i)
     else:
