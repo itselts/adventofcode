@@ -76,5 +76,8 @@ def rec2(monkey, monkeys):
                     return "(" + rec2(o[0], monkeys) + "/" + rec2(o[2], monkeys) + ")"
 
 
+#x = Symbol('x')
+#print(solve("("+(rec2("root", monkeys)[0]+")"+"-("+rec2("root", monkeys)[0])+")", x))
+
 print(rec2("root", monkeys)[0]+ "=" + rec2("root", monkeys)[1])
 # paste into https://www.mathpapa.com/simplify-calculator/

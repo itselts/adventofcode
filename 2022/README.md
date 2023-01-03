@@ -202,3 +202,16 @@ To do
 ### Part 2
 - Number of moves is multiplied (Doesn't change code given modulus operator)
 - 10 rounds of shuffling
+
+
+## Day 21 - Monkey Math 
+### Part 1
+- Recursion and use of case match to evaluate root node.
+- Can recode using try-except with eval
+
+### Part 2
+- No longer evaluating, but solving.
+- Cannot brute force as solution is in 10*e9 magnitude
+- Have to output the whole equation as a string and solve for x.
+    - Have to remember PEDMAS and include brackets
+- Used mathpapa (External. Not sure why sympy solver fails) to solve the  equation
