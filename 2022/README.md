@@ -213,5 +213,6 @@ To do
 - No longer evaluating, but solving.
 - Cannot brute force as solution is in 10*e9 magnitude
 - Have to output the whole equation as a string and solve for x.
+    - Recursion is now return a string rather than an evaluated expression
     - Have to remember PEDMAS and include brackets
 - Used mathpapa (External. Not sure why sympy solver fails) to solve the  equation
