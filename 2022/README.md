@@ -216,3 +216,19 @@ To do
     - Recursion is now return a string rather than an evaluated expression
     - Have to remember PEDMAS and include brackets
 - Used mathpapa (External. Not sure why sympy solver fails) to solve the  equation
+
+
+## Day 22 - Monkey Map
+### Part 1
+- Traversing along a 2D board according to instructions.
+- If hit a wall, stop.
+- Going off the board wraps around to the opposite edge to the direction you are facing.
+
+### Part 2
+- Traversing along a 3D cube folded according to the 2D board.
+- Label each face, and each off-board edge.
+- Going off the board now corresponds to getting placed in one of the other off-board edges according to how the cube is folded.
+    - Each 14 cases hard-coded in.
+        - New coordinates on the board
+        - New orientation/direction
+    - Bugs galore (Are the new coordinates correct? Is the new direction on the new face correct?) 
