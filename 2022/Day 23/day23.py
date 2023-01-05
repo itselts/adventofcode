@@ -2,7 +2,7 @@ from copy import deepcopy
 
 file = "input"
 
-part2 = False
+part2 = True
 grove = {}
 cycle = ["N", "S", "W", "E"]
 
@@ -29,8 +29,12 @@ def move(dir, i, j):
 # True if there are no adjacent elves
 alone = lambda i,j: all([s not in {v for k,v in grove.items()} for s in [(i-1, j-1), (i-1, j), (i-1, j+1), (i, j-1), (i, j+1), (i+1, j-1), (i+1, j), (i+1, j+1)]])
 
-for k in range(100):
+k=0
+while True:
+    k += 1
+    print(k)
     old_grove = deepcopy(grove)
+
     # First half 
     proposed = []
     overlap = set()
@@ -40,7 +44,7 @@ for k in range(100):
             proposed.append((i,j))
             overlap.add((i,j))
             continue
-
+        
         propose = (i,j)
         for dir in cycle:
             if move(dir,i,j)[0]:
@@ -57,12 +61,11 @@ for k in range(100):
     cycle = cycle[1:] + list(cycle[0])
 
     if part2 == False:
-        if k == 9:
+        if k == 10:
             ymin = min(v[1] for k,v in grove.items())
             ymax = max(v[1] for k,v in grove.items())
             xmin = min(v[0] for k,v in grove.items())
             xmax = max(v[0] for k,v in grove.items())
-
             print((ymax-ymin+1)*(xmax-xmin+1)-len(grove))
             break
     else:
