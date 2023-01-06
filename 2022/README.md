@@ -241,6 +241,7 @@ To do
 - BFS >> DFS for shortest path questions (We only need to find the earliest branch that hits the end. BFS does earliest branches first)
 - Complex numbers to encode positions, as well as the deltas of moving.
 - Seen set is (coordinate, step). (The step encodes everything about the blizzard locations)
+    - BFS also means that we don't need to compute the blizzard locations every iteration, only every change in step.
 - Create an occupied set, rather than checking if adj is in tuple([blizzards[key][0] for key in sorted(blizzards.keys())]) every iteration.
     - Drastically improves solving time
 
