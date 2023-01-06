@@ -46,8 +46,8 @@ def next_bliz():
 
 
 # BFS 
-# State: (current position, blizzard positions, steps taken)
-stack = deque([((1+0j), 0)])
+# State: (current position, end1, start1, steps taken)
+stack = deque([((1+0j), False, False, 0)])
 seen = set()
 old_step = -1
 
