@@ -133,7 +133,7 @@ To do
 
 ## Day 16 - Proboscidea Volcanium
 ### Part 1
-- Stack-based BFS of a cave system traversal. (Try recursion-based BFS in future?)
+- Stack-based DFS of a cave system traversal. Find the maximum pressure released possible. (Try recursion-based DFS in future?)
 - 4 dimensional state vector.
 - Dynamic node values for each step.
 - 45+ nodes at depth 30.
@@ -145,6 +145,7 @@ To do
 - Heuristic used as original solution took too long (2.5 hours) and was wrong (Possible edge case when my time has run out, but not the elphants)
     - Heuristic - Rerun part 1 twice, where the opened valves of the first run is removed from the second run.
     - This greedy approach may not always work (Worked for my input data so...)
+    - Branch pruning required
 
 
 ## Day 17 - Pyroclastic Flow
@@ -176,7 +177,7 @@ To do
 
 ## Day 19 - Not Enough Minerals
 ### Part 1
-- Stack-based BFS of mining geode blueprints at depth 24.
+- Stack-based BFS of finding the maximuim geode mined by a blueprint at depth 24.
 - Optimisation required with branch pruning
     - No need to build more robots than the maximum possible expenditure of that ore for a turn
     - Cut a branch short if it can never reach the current geode maximum
@@ -232,3 +233,16 @@ To do
         - New coordinates on the board
         - New orientation/direction
     - Bugs galore (Are the new coordinates correct? Is the new direction on the new face correct?) 
+
+
+## Day 24 - Blizzard Basin
+### Part 1
+- Stack based BFS. Finding the shortest path to get from start to end, where the obstacles are dynamic.
+- BFS >> DFS for shortest path questions (We only need to find the earliest branch that hits the end. BFS does earliest branches first)
+- Complex numbers to encode positions, as well as the deltas of moving.
+- Seen set is (coordinate, step). (The step encodes everything about the blizzard locations)
+- Create an occupied set, rather than checking if adj is in tuple([blizzards[key][0] for key in sorted(blizzards.keys())]) every iteration.
+    - Drastically improves solving time
+
+### Part 2
+- Go to the end, then back to the start, and back to the end.
