@@ -234,8 +234,11 @@ To do
         - New orientation/direction
     - Bugs galore (Are the new coordinates correct? Is the new direction on the new face correct?) 
 
+## Day 23 - 
+- Have the grove as a set rather than dic. Makes checking condition much faster rather than calculating list comprehension each iteration.
 
 ## Day 24 - Blizzard Basin
+- Dont need to check if next state is in stack, add that state into seen when it gets added to the stack.
 ### Part 1
 - Stack based BFS. Finding the shortest path to get from start to end, where the obstacles are dynamic.
 - BFS >> DFS for shortest path questions (We only need to find the earliest branch that hits the end. BFS does earliest branches first)
@@ -247,3 +250,5 @@ To do
 
 ### Part 2
 - Go to the end, then back to the start, and back to the end.
+
+

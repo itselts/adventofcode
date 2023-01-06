@@ -44,18 +44,18 @@ def next_bliz():
         blizzards[b][0] = new_bliz_pos
         continue
 
-
 # BFS 
 # State: (current position, end1, start1, steps taken)
 stack = deque([((1+0j), False, False, 0)])
-seen = set()
+seen = {(((1+0j), False, False, 0))}
 old_step = -1
 
 while stack:
-    # print(len(stack))
+    #print(len(stack))
     finished = False
-    cur_pos, steps = stack.popleft()
-    seen.add((cur_pos, steps))
+    cur_pos, end1, start2, steps = stack.popleft()
+    seen.add((cur_pos, end1, start2, steps))
+
     if steps > old_step: # Blizzard shift
         print(old_step, steps)
         old_step = steps 
@@ -65,19 +65,37 @@ while stack:
             occupied.add(blizzards[k][0])
 
     # Staying in palce
-    if (cur_pos not in occupied) and ((cur_pos, steps+1) not in seen) and ((cur_pos, steps+1) not in stack):
-        stack.append((cur_pos, steps+1))
+    if (cur_pos not in occupied) and ((cur_pos, end1, start2, steps+1) not in seen) and ((cur_pos, end1, start2, steps+1) not in stack):
+        stack.append((cur_pos, end1, start2, steps+1))
+        #seen.add((cur_pos, end1, start2, steps+1))
 
     # Moving to empty space
     for adj in [cur_pos+move for move in dirs.values()]:
-        if adj == complex(xmax-1, ymax): # If we hit the end
+        if adj == complex(xmax-1, ymax) and (end1 == True) and (start2 == True): # If we finish our return trip
             finished = True
             print("DONE")
             print(steps+1)
             break
-        if (1 <= adj.real <= xmax-1) and (1 <= adj.imag <= ymax-1):
-            if (adj not in occupied) and ((adj, steps+1) not in seen) and ((adj, steps+1) not in stack):
-                stack.append((adj, steps+1))
+        if (0 <= adj.real <= xmax) and (0 <= adj.imag <= ymax):
+            if adj in boundaries:
+                    continue
+            if (adj not in occupied) and ((adj, end1, start2, steps+1) not in seen) and ((adj, end1, start2, steps+1) not in stack):
+                if adj == complex(xmax-1, ymax) and (end1 == False) and (start2 == False):
+                    stack = deque([])
+                    stack.append((adj, True, False, steps+1))
+                    #seen.add((adj, True, False, steps+1))
+                    print("End reached once.")
+                    break
+                elif adj == complex(1, 0) and (end1 == True) and (start2 == False):
+                    stack = deque([])
+                    stack.append((adj, True, True, steps+1))
+                    #seen.add((adj, True, True, steps+1))
+                    print("Start reached again.")
+                    break
+                else:
+                    stack.append((adj, end1, start2, steps+1))
+                
+            
 
     if finished:
         break

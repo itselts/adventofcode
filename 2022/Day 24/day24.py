@@ -15,6 +15,7 @@ for k, line in enumerate(open("./input.csv").read().splitlines()):
 
 xmax = int(max(p.real for p in boundaries))
 ymax = int(max(p.imag for p in boundaries))
+print(blizzards)
 
 dirs = {">": (+1+0j), "<": (-1+0j), "^": (0-1j), "v": (0+1j)}
 
@@ -57,7 +58,7 @@ while stack:
     cur_pos, steps = stack.popleft()
     seen.add((cur_pos, steps))
     if steps > old_step: # Blizzard shift
-        print(old_step, steps)
+        #print(old_step, steps)
         old_step = steps 
         next_bliz()
         occupied = set()
