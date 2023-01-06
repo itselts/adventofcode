@@ -15,7 +15,6 @@ for k, line in enumerate(open("./input.csv").read().splitlines()):
 
 xmax = int(max(p.real for p in boundaries))
 ymax = int(max(p.imag for p in boundaries))
-print(blizzards)
 
 dirs = {">": (+1+0j), "<": (-1+0j), "^": (0-1j), "v": (0+1j)}
 

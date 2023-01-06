@@ -93,9 +93,6 @@ while stack:
                     print("Start reached again.")
                     break
                 else:
-                    stack.append((adj, end1, start2, steps+1))
-                
-            
-
+                    stack.append((adj, end1, start2, steps+1))  
     if finished:
         break
