@@ -250,5 +250,6 @@ To do
 
 ### Part 2
 - Go to the end, then back to the start, and back to the end.
+- Key trick: Restart the stack once you hit the end/back the first time. (The rest of the branches no longer matter)
 
 
