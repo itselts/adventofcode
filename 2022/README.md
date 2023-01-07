@@ -252,4 +252,7 @@ To do
 - Go to the end, then back to the start, and back to the end.
 - Key trick: Restart the stack once you hit the end/back the first time. (The rest of the branches no longer matter)
 
-
+## Day 25 - Full of Hot Air
+- Converting from "SNAFU" to decimal, and from decimal to "SNAFU".
+    - SNAFU to decimal is trivial: Sum up each digit value
+    - Decimal to SNAFU: Get the total modulo 5 (Remainder). That dictates what the next least significant figure is in SNAFU. 
