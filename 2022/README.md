@@ -91,9 +91,12 @@
 ## Day 12 - Hill Climbing Algorithm
 ### Part 1
 - Dijkstra's on elevation grid
+- Can also do it via a very light-weight BFS
+    - Implementing Dijkstra's via BFS is very helpful
+- Creative way in handling directional movement with complex numbers, and handling cases when you are on the edge.
 
 ### Part 2
-To do
+- If done via BFS, can just do a BFS for each "a" position given it is very light-weight.
 
 ## Day 13 - Distress Signal
 ### Part 1
