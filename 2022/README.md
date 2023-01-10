@@ -239,7 +239,13 @@
         - New orientation/direction
     - Bugs galore (Are the new coordinates correct? Is the new direction on the new face correct?) 
 
-## Day 23 - 
+## Day 23 - Unstable Diffusion
+### Part 1
+- Elves on a grid want to "spread out" according to a rule set.
+- If two or more elves propose to go on a coordinate, they stay put. Need a counter for each position, as well as keeping track of where they were originially.
+
+### Part 2
+- When does the grid reach equilibrium.
 - Have the grove as a set rather than dic. Makes checking condition much faster rather than calculating list comprehension each iteration.
 
 ## Day 24 - Blizzard Basin
