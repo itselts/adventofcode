@@ -32,30 +32,35 @@ def neighbour(index, map):
 
     return valid 
 
+min_dist = 100000
+for j, line in enumerate(map):
+    for i, point in enumerate(line):
+        print(min_dist)
+        if point != "a":
+            continue
 
-dist = {}
-Q = set()
+        dist = {}
+        Q = set()
 
-for index in np.ndindex(map.shape):
-    Q.add(index)
-    dist[index] = math.inf 
+        for index in np.ndindex(map.shape):
+            Q.add(index)
+            dist[index] = math.inf 
 
-dist[S] = 0
+        dist[(i,j)] = 0
 
+        while Q:
+            tmp = {index: value for index, value in dist.items() if index in Q}
+            u = min(tmp, key=tmp.get)
+            # u = min(dist.keys() & Q, key=dist.get) # for each item x in iterable, apply dist.get(x) and get the x which produces the smallest dist.get(x)
+            if u == E:
+                break      
+            
+            Q.remove(u)
+            for v in (neighbour(u, map) & Q):
+                if dist[u] + 1 < dist[v]:
+                    dist[v] = dist[u] + 1
 
-while Q:
-    
-    tmp = {index: value for index, value in dist.items() if index in Q}
-    u = min(tmp, key=tmp.get)
-    # u = min(dist.keys() & Q, key=dist.get) # for each item x in iterable, apply dist.get(x) and get the x which produces the smallest dist.get(x)
-    
-    if u == E:
-        break      
-    
-    Q.remove(u)
-    for v in (neighbour(u, map) & Q):
-        if dist[u] + 1 < dist[v]:
-            dist[v] = dist[u] + 1
+        if dist[E] < min_dist:
+            min_dist = dist[E]
 
-print(dist[E])
-
+print(min_dist)

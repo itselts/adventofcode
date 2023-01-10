@@ -92,11 +92,13 @@
 ### Part 1
 - Dijkstra's on elevation grid
 - Can also do it via a very light-weight BFS
-    - Implementing Dijkstra's via BFS is very helpful
+    - Dijkstra's is  a BFS algorithm. Anytime a point gets added to the stack, it has actually found the shortest distance to that point. 
+    - Implementing Dijkstra's via BFS is very helpful. 
 - Creative way in handling directional movement with complex numbers, and handling cases when you are on the edge.
 
 ### Part 2
 - If done via BFS, can just do a BFS for each "a" position given it is very light-weight.
+- Dijkstra for each point is a lot slower.
 
 ## Day 13 - Distress Signal
 ### Part 1
