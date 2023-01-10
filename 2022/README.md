@@ -247,6 +247,7 @@
 ### Part 2
 - When does the grid reach equilibrium.
 - Have the grove as a set rather than dic. Makes checking condition much faster rather than calculating list comprehension each iteration.
+- pypy run time ~5 seconds, vs ~15 seconds
 
 ## Day 24 - Blizzard Basin
 - Dont need to check if next state is in stack, add that state into seen when it gets added to the stack.
